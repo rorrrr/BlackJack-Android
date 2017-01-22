@@ -20,7 +20,7 @@ public class Deck {
 //    creates a deck, for each suit gives a rank using the enums
 //    shuffles
 
-    private void shuffledPopulate(){
+    public void shuffledPopulate(){
         for (Suit suit : Suit.values()) {
             for (Rank rank : Rank.values()) {
                 setOfCards.add(new Card(rank, suit));

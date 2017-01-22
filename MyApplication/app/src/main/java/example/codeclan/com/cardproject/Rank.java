@@ -5,7 +5,6 @@ package example.codeclan.com.cardproject;
  */
 
 enum Rank {
-    ACE,
     DEUCE,
     THREE,
     FOUR,
@@ -17,5 +16,6 @@ enum Rank {
     TEN,
     JACK,
     QUEEN,
-    KING
+    KING,
+    ACE
 }
