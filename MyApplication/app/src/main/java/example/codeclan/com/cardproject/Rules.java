@@ -8,7 +8,7 @@ package example.codeclan.com.cardproject;
 public class Rules {
     private Player[] players;
     private Deck deck;
-    private Scoreboard scoreboard;
+    public Scoreboard scoreboard;
 
 
     public Rules(Player[] players, Deck deck, Scoreboard scoreboard){
@@ -47,12 +47,14 @@ public class Rules {
         scoreboard.add(result);
     }
 
+//    shuffled deck, players get cards, determine highest score, displays each players hand n who won
 
-    public void play() {
+
+    public String play() {
         deck.shuffledPopulate();
         dealCardsToPlayers();
         findHighestScore();
-        scoreboard.print;
+        return scoreboard.print();
     }
 
 

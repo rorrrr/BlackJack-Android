@@ -1,9 +1,29 @@
 package example.codeclan.com.cardproject;
 
+import java.util.ArrayList;
+
 /**
  * Created by user on 22/01/2017.
  */
+
 public class Scoreboard {
-    public void add(String name) {
+
+    private ArrayList<String> activeDetails;
+
+    public Scoreboard(){
+        this.activeDetails = new ArrayList<>();
+    }
+
+    public void add(String string) {
+        activeDetails.add(string);
+    }
+
+//    dont understand why it wants to return null there
+
+    public String print(){
+        for (String activeDetail : activeDetails){
+            return activeDetail;
+        }
+        return null;
     }
 }
