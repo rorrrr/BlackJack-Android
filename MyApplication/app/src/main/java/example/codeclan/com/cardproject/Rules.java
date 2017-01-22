@@ -51,16 +51,11 @@ public class Rules {
 
 
     public String play() {
-        deck.shuffledPopulate();
+        deck.shuffle();
         dealCardsToPlayers();
         findHighestScore();
         return scoreboard.print();
     }
-
-
-
-
-
 
 
 

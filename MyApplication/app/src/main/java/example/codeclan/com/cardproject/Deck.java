@@ -14,20 +14,24 @@ public class Deck {
 
     public Deck(ArrayList<Card> setOfCards) {
         this.setOfCards = setOfCards;
-        shuffledPopulate();
+        populate();
     }
 
 //    creates a deck, for each suit gives a rank using the enums
-//    shuffles
+//    shuffles NO LONGER IS SHUFFLED FOR TESTING REASON
 
-    public void shuffledPopulate(){
+    public void populate(){
         for (Suit suit : Suit.values()) {
             for (Rank rank : Rank.values()) {
                 setOfCards.add(new Card(rank, suit));
             }
         }
+    }
+
+    public void shuffle(){
         Collections.shuffle(setOfCards);
     }
+
 
 //    Dealing one card at a time to each player PLAYER
 //    adds card at index0 and removes card at index0
