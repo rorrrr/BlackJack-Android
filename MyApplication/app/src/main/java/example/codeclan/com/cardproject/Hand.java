@@ -23,7 +23,7 @@ public class Hand {
     public int getBlackjackValue(){
         int total = 0;
         for (Card card : drawncards){
-            total += card.getValue();
+            total += card.getBlackJackValue();
         }
         return total;
     }

@@ -15,12 +15,12 @@ public class Card {
 //    just for blackjack, using JQK's 11,12,13 to set as 10
 //    start at 2, ace as 11
 
-    public int getValue(){
+    public int getBlackJackValue(){
         int value = rank.ordinal() + 2;
-        if (value == 15) value = 11;
+        if (value == 14) value = 11;
+        if (this.rank == Rank.JACK) value = 10;
         if (value == 12) value = 10;
         if (value == 13) value = 10;
-        if (value == 14) value = 10;
         return value;
     }
 
