@@ -17,15 +17,15 @@ public class HandTest {
     @Before
     public void before() {
         hand = new Hand();
-        card1 = new Card(Rank.DEUCE, Suit.DIAMONDS);
-        card2 = new Card(Rank.THREE, Suit.CLUBS);
+        card1 = new Card(Rank.Ace, Suit.Diamonds);
+        card2 = new Card(Rank.Ace, Suit.Clubs);
         hand.addCardToHand(card1);
         hand.addCardToHand(card2);
     }
 
     @Test
     public void canGetBlackjackValueOfHand(){
-        assertEquals(5, hand.getBlackjackValue());
+        assertEquals(12, hand.getBlackjackValue());
     }
 
 }

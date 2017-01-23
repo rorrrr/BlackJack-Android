@@ -18,7 +18,7 @@ public class Card {
     public int getBlackJackValue(){
         int value = rank.ordinal() + 2;
         if (value == 14) value = 11;
-        if (this.rank == Rank.JACK) value = 10;
+        if (this.rank == Rank.Jack) value = 10;
         if (value == 12) value = 10;
         if (value == 13) value = 10;
         return value;
@@ -27,6 +27,6 @@ public class Card {
 //    return string of details eg jack of hearts
 
     public String cardDetails(){
-        return rank + " of " + suit;
+        return rank + " Of " + suit;
     }
 }

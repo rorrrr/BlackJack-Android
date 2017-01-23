@@ -5,8 +5,8 @@ package example.codeclan.com.cardproject;
  */
 
 enum Suit {
-    DIAMONDS,
-    SPADES,
-    CLUBS,
-    HEARTS
+    Diamonds,
+    Spades,
+    Clubs,
+    Hearts
 }

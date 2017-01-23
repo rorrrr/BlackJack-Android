@@ -15,9 +15,9 @@ public class CardTest {
 
     @Before
     public void beforeEach() {
-        card = new Card(Rank.DEUCE, Suit.DIAMONDS);
-        card2 = new Card(Rank.JACK, Suit.HEARTS);
-        card3 = new Card(Rank.ACE, Suit.SPADES);
+        card = new Card(Rank.Deuce, Suit.Diamonds);
+        card2 = new Card(Rank.Jack, Suit.Hearts);
+        card3 = new Card(Rank.Ace, Suit.Spades);
     }
 
     @Test
@@ -37,7 +37,7 @@ public class CardTest {
 
     @Test
     public void testCardDetailsAsString(){
-        assertEquals("DEUCE of DIAMONDS", card.cardDetails());
+        assertEquals("Deuce Of Diamonds", card.cardDetails());
     }
 
 }

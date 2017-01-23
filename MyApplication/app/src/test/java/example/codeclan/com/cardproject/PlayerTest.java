@@ -16,8 +16,8 @@ public class PlayerTest {
     @Before
     public void before(){
         player = new Player("Rory", new Hand());
-        card1 = new Card(Rank.ACE, Suit.DIAMONDS);
-        card2 = new Card(Rank.JACK, Suit.CLUBS);
+        card1 = new Card(Rank.Ace, Suit.Diamonds);
+        card2 = new Card(Rank.Jack, Suit.Clubs);
     }
 
     @Test

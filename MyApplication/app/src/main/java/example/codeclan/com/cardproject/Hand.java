@@ -25,6 +25,7 @@ public class Hand {
         for (Card card : drawncards){
             total += card.getBlackJackValue();
         }
+        if (total == 22) total = 12;
         return total;
     }
 

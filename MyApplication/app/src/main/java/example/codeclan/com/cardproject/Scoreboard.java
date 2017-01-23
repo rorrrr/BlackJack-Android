@@ -21,9 +21,11 @@ public class Scoreboard {
 //    dont understand why it wants to return null there
 
     public String print(){
+        String finalResults = "";
         for (String activeDetail : activeDetails){
-            return activeDetail;
+            finalResults += activeDetail + "\n";
         }
-        return null;
+        return finalResults;
     }
+
 }

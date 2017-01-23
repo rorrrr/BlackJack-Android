@@ -15,6 +15,8 @@ public class Player {
 //    each person will have a name, possibly waste of time. could just be player 1etc
 
     public String getName(){
+        name.toLowerCase();
+        name = name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
         return name;
     }
 

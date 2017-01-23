@@ -1,6 +1,9 @@
 package example.codeclan.com.cardproject;
 
 
+//import org.apache.commons.lang.WordUtils;
+
+
 /**
  * Created by user on 21/01/2017.
  */
@@ -28,12 +31,12 @@ public class Rules {
             scoreboard.add(player.getName());
 
             card = deck.drawCard(player);
-            scoreboard.add(card.toString());
+            scoreboard.add(card.cardDetails());
 
             card = deck.drawCard(player);
-            scoreboard.add(card.toString());
+            scoreboard.add(card.cardDetails());
 
-            String handTotal = "Total: " + player.getBlackjackHandValue();
+            String handTotal = "Total: " + player.getBlackjackHandValue() + "\n";
             scoreboard.add(handTotal);
 
         }
@@ -43,7 +46,7 @@ public class Rules {
 
     private void findHighestScore() {
         int indexOfWinner = players[0].getBlackjackHandValue() > players[1].getBlackjackHandValue() ? 0 : 1;
-        String result = players[indexOfWinner].getName() + " wins!";
+        String result = "It's Lit, " + players[indexOfWinner].getName() + " Wins!";
         scoreboard.add(result);
     }
 
@@ -54,7 +57,11 @@ public class Rules {
         deck.shuffle();
         dealCardsToPlayers();
         findHighestScore();
-        return scoreboard.print();
+        String results = scoreboard.print();
+//        return WordUtils.capitalizeFully(results);
+//        results.toLowerCase();
+//        results = results.substring(0, 1).toUpperCase() + results.substring(1).toLowerCase();
+        return results;
     }
 
 
