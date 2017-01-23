@@ -11,7 +11,46 @@
     tools:context="example.codeclan.com.cardproject.RulesActivity">
 
     <TextView
+        android:id="@+id/header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="@string/main_title"
+        android:layout_centerHorizontal="true"
+        android:textSize="70sp" />
+
+    <EditText
+        android:id="@+id/player2_name"
+        android:hint="@string/player2_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/header"
+        android:layout_alignRight="@+id/header"
+        android:layout_alignEnd="@+id/header"
+        android:textSize="26sp"/>
+
+    <EditText
+        android:id="@+id/player1_name"
+        android:hint="@string/player1_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/player2_name"
+        android:layout_alignBottom="@+id/player2_name"
+        android:layout_alignLeft="@+id/header"
+        android:layout_alignStart="@+id/header"
+        android:textSize="26sp" />
+
+    <Button
+        android:id="@+id/play_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/play_button_text"
+        android:textSize="25sp"
+        android:layout_marginTop="19dp"
+        android:layout_below="@+id/player2_name"
+        android:layout_centerHorizontal="true"
+        android:onClick="onPlayButtonClick"
+        />
+
+
 </RelativeLayout>
