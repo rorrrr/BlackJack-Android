@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">CARDproject</string>
-    <string name="main_screen_name">Project CARD</string>
+    <string name="main_screen_name">2 Player Blackjack</string>
     <string name="main_title">2 PLAYER BLACKJACK</string>
-    <string name="player1_name">Enter Player 1\'s Name:</string>
-    <string name="player2_name">Enter Player 2\'s Name:</string>
+    <string name="player1_name">Enter Player 1\'s Name</string>
+    <string name="player2_name">Enter Player 2\'s Name</string>
     <string name="play_button_text">Let The Games Begin!</string>
     <string name="game_output">Results Will Be Displayed Here</string>
 

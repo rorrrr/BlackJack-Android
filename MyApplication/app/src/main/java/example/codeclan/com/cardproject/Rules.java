@@ -44,10 +44,29 @@ public class Rules {
 
 //        goes through each player, puts them in an array decsending highest to lowest
 
-    private void findHighestScore() {
-        int indexOfWinner = players[0].getBlackjackHandValue() > players[1].getBlackjackHandValue() ? 0 : 1;
-        String result = "It's Lit, " + players[indexOfWinner].getName() + " Wins!";
-        scoreboard.add(result);
+    public String winnersName (){
+
+        if (players[0].getBlackjackHandValue() == players[1].getBlackjackHandValue()){
+            String winnersName = "It's a Draw";
+            return winnersName;
+        }
+        else {
+            int indexOfWinner = players[0].getBlackjackHandValue() > players[1].getBlackjackHandValue() ? 0 : 1;
+            String winnersName = players[indexOfWinner].getName();
+            return winnersName;
+        }
+    }
+
+    public void findHighestScore() {
+        if (players[0].getBlackjackHandValue() == players[1].getBlackjackHandValue()){
+            String draw = "It's Not Lit, It's A Draw";
+            scoreboard.add(draw);
+        }
+        else {
+            int indexOfWinner = players[0].getBlackjackHandValue() > players[1].getBlackjackHandValue() ? 0 : 1;
+            String result = "It's Lit, " + players[indexOfWinner].getName() + " Wins!";
+            scoreboard.add(result);
+        }
     }
 
 //    shuffled deck, players get cards, determine highest score, displays each players hand n who won
