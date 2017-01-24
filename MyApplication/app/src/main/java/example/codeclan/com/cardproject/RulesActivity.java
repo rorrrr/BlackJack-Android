@@ -66,17 +66,25 @@ public class RulesActivity extends AppCompatActivity {
             player1name.setBackgroundColor(Color.GREEN);
 //            player2name.setBackgroundColor(Color.BLACK);
 
-        }
-        else if (player2name.getText().toString().equals(wonName)){
+        } else if (player2name.getText().toString().equals(wonName)) {
 //            player1name.setBackgroundColor(Color.BLACK);
             player2name.setBackgroundColor(Color.GREEN);
-        }
-        else {
+        } else {
             player1name.setBackgroundColor(Color.BLUE);
             player2name.setBackgroundColor(Color.BLUE);
         }
 
         resultsText.setText(result);
+    }
+
+    public void onLeaderboardClick(View view) {
+
+        
+
 
     }
+
+
+
+
 }

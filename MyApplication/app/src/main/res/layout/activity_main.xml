@@ -10,29 +10,6 @@
 
     tools:context="example.codeclan.com.cardproject.RulesActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_button"
-        android:layout_gravity="bottom"
-        android:layout_width="800sp"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="0dp"
-        />
-
-
-    <TextView
-        android:id="@+id/header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/main_title"
-        android:layout_centerHorizontal="true"
-        android:textSize="53sp"
-        android:textColor="#3DF956"
-        />
-
 
     <TextView
         android:id="@+id/game_output"
@@ -44,18 +21,25 @@
         android:layout_below="@+id/play_button"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        android:id="@+id/play_button"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_button"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/play_button_text"
-        android:textSize="40sp"
+        android:text="@string/main_title"
+        android:textSize="53sp"
         android:textColor="#3DF956"
-        android:onClick="onPlayButtonClick"
-        android:layout_marginTop="27dp"
-        android:layout_below="@+id/player2_name"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:id="@+id/player1_name"
@@ -64,7 +48,8 @@
         android:layout_height="wrap_content"
         android:textSize="26sp"
         android:textAlignment="center"
-        android:layout_above="@+id/play_button"
+        android:layout_alignBaseline="@+id/player2_name"
+        android:layout_alignBottom="@+id/player2_name"
         android:layout_alignLeft="@+id/header"
         android:layout_alignStart="@+id/header" />
 
@@ -73,12 +58,49 @@
         android:hint="@string/player2_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="21dp"
         android:textAlignment="center"
         android:textSize="26sp"
         android:layout_below="@+id/header"
         android:layout_alignRight="@+id/header"
         android:layout_alignEnd="@+id/header" />
 
+    <Button
+        android:id="@+id/play_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/play_button_text"
+        android:textSize="40sp"
+        android:textColor="#3DF956"
+        android:onClick="onPlayButtonClick"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/player1_name"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/reset_Button"
+        android:textSize="28sp"
+        android:layout_width="220sp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/play_button"
+        android:layout_alignEnd="@+id/play_button"
+        android:layout_alignTop="@+id/toolbar_button"
+        android:text="@string/reset_text"
+        android:textColor="#FFFFFF"
+        android:onClick="onResetButtonClick"/>
+
+    <Button
+        android:id="@+id/leaderboard_Button"
+        android:textSize="28sp"
+        android:layout_width="220sp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignTop="@+id/toolbar_button"
+        android:layout_alignLeft="@+id/play_button"
+        android:layout_alignStart="@+id/play_button"
+        android:text="@string/leaderboard_name"
+        android:textColor="#FFFFFF"
+        android:onClick="onLeaderboardButtonClick"/>
 
 </RelativeLayout>

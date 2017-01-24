@@ -6,5 +6,7 @@
     <string name="player2_name">Enter Player 2\'s Name</string>
     <string name="play_button_text">Let The Games Begin!</string>
     <string name="game_output">Results Will Be Displayed Here</string>
+    <string name="leaderboard_name">Leaderboard</string>
+    <string name="reset_text">Reset</string>
 
 </resources>
