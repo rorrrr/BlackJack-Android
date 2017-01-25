@@ -18,6 +18,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -65,34 +66,41 @@ public class RulesActivity extends AppCompatActivity {
 
         String player1String = player1name.getText().toString();
         String player2String = player2name.getText().toString();
-        player1name.setBackgroundColor(android.R.color.transparent);
-        player2name.setBackgroundColor(android.R.color.transparent);
-        Log.d("BlackjackGame:", "Play Button Clicked");
-        Log.d("BlackjackGame:", "Players Names: '" + player1String + " " + player2String + "'");
 
-        Player player1 = new Player(player1String, new Hand());
-        Player player2 = new Player(player2String, new Hand());
-        Player[] players = {player1, player2};
-        Deck setOfCards = new Deck(new ArrayList<Card>());
+        if (player1String.isEmpty() || player2String.isEmpty()){
+            Toast.makeText(getBaseContext(), "MMMMM WATCHA SAY, YOU FORGOT A NAME", Toast.LENGTH_SHORT).show();
+        }
+        else{
 
-        Rules rules = new Rules(players, setOfCards, new Scoreboard());
+            player1name.setBackgroundColor(android.R.color.transparent);
+            player2name.setBackgroundColor(android.R.color.transparent);
+            Log.d("BlackjackGame:", "Play Button Clicked");
+            Log.d("BlackjackGame:", "Players Names: '" + player1String + " " + player2String + "'");
 
-        String result = rules.play();
-        String wonName = rules.winnersName();
-        if (player1name.getText().toString().equals(wonName)) {
-            player1name.setBackground(getResources().getDrawable(R.drawable.grbtn));
+            Player player1 = new Player(player1String, new Hand());
+            Player player2 = new Player(player2String, new Hand());
+            Player[] players = {player1, player2};
+            Deck setOfCards = new Deck(new ArrayList<Card>());
+
+            Rules rules = new Rules(players, setOfCards, new Scoreboard());
+
+            String result = rules.play();
+            String wonName = rules.winnersName();
+            if (player1name.getText().toString().equals(wonName)) {
+                player1name.setBackground(getResources().getDrawable(R.drawable.grbtn));
 //            player2name.setBackgroundColor(Color.BLACK);
 
-        } else if (player2name.getText().toString().equals(wonName)) {
+            } else if (player2name.getText().toString().equals(wonName)) {
 //            player1name.setBackgroundColor(Color.BLACK);
-            player2name.setBackground(getResources().getDrawable(R.drawable.grbtn));
-        } else {
-            player1name.setBackgroundColor(Color.BLUE);
-            player2name.setBackgroundColor(Color.BLUE);
-        }
+                player2name.setBackground(getResources().getDrawable(R.drawable.grbtn));
+            } else {
+                player1name.setBackgroundColor(Color.BLUE);
+                player2name.setBackgroundColor(Color.BLUE);
+            }
 
-        resultsText.setText(result);
-        users.addWinForUser(rules.winnersName());
+            resultsText.setText(result);
+            users.addWinForUser(rules.winnersName());
+        }
     }
 
     public void onLeaderboardClick(View view) {
