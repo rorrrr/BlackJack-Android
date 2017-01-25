@@ -8,6 +8,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/winners_name"
         android:text=""
-        android:textSize="20sp"
+        android:textSize="40sp"
         />
 </LinearLayout>

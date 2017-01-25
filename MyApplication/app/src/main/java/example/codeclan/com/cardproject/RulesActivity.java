@@ -4,9 +4,11 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.inputmethodservice.Keyboard;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -54,7 +56,6 @@ public class RulesActivity extends AppCompatActivity {
         resetButton = (Button)findViewById(R.id.reset_Button);
 
         users = new Leaderboard();
-
 
         Log.d(getClass().toString(), "onCreate got called");
     }
