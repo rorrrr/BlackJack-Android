@@ -14,9 +14,9 @@
 //public class LeaderboardListAdapter extends BaseAdapter {
 //
 //    private Context mContext;
-//    private List<Leaderboard> mLeaderboard;
+//    private Leaderboard mLeaderboard;
 //
-//    public LeaderboardListAdapter(Context mContext, List<Leaderboard> mLeaderboard){
+//    public LeaderboardListAdapter(Context mContext, Leaderboard mLeaderboard){
 //        this.mContext = mContext;
 //        this.mLeaderboard = mLeaderboard;
 //    }

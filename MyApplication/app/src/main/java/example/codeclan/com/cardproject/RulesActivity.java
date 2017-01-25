@@ -1,5 +1,7 @@
 package example.codeclan.com.cardproject;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -16,7 +18,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 import static example.codeclan.com.cardproject.R.color.colorPrimaryDark;
 
 public class RulesActivity extends AppCompatActivity {
@@ -27,6 +31,10 @@ public class RulesActivity extends AppCompatActivity {
     Button leaderboardButton;
     Button resetButton;
     TextView resultsText;
+    Leaderboard users;
+    HashMap<String, Integer> userscores;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +52,9 @@ public class RulesActivity extends AppCompatActivity {
         resultsText = (TextView)findViewById(R.id.game_output);
         leaderboardButton = (Button)findViewById(R.id.leaderboard_Button);
         resetButton = (Button)findViewById(R.id.reset_Button);
+
+        users = new Leaderboard();
+
 
         Log.d(getClass().toString(), "onCreate got called");
     }
@@ -80,6 +91,7 @@ public class RulesActivity extends AppCompatActivity {
         }
 
         resultsText.setText(result);
+        users.addWinForUser(rules.winnersName());
     }
 
     public void onLeaderboardClick(View view) {
@@ -88,7 +100,16 @@ public class RulesActivity extends AppCompatActivity {
 
         Intent wIntent;
         wIntent = new Intent(RulesActivity.this, LeaderboardActivity.class);
+        wIntent.putExtra("originalLeaderboard", users);
         startActivity(wIntent);
+    }
+
+    public void onResetButtonClick(View view) {
+
+        Intent intent = new Intent(this, RulesActivity.class);
+        this.startActivity(intent);
+        this.finishAffinity();
+
     }
 
 
