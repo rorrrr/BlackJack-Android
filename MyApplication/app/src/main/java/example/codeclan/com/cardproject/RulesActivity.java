@@ -1,6 +1,7 @@
 package example.codeclan.com.cardproject;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.inputmethodservice.Keyboard;
@@ -23,6 +24,8 @@ public class RulesActivity extends AppCompatActivity {
     EditText player1name;
     EditText player2name;
     Button playbutton;
+    Button leaderboardButton;
+    Button resetButton;
     TextView resultsText;
 
     @Override
@@ -39,6 +42,8 @@ public class RulesActivity extends AppCompatActivity {
         player1name = (EditText)findViewById(R.id.player1_name);
         player2name = (EditText)findViewById(R.id.player2_name);
         resultsText = (TextView)findViewById(R.id.game_output);
+        leaderboardButton = (Button)findViewById(R.id.leaderboard_Button);
+        resetButton = (Button)findViewById(R.id.reset_Button);
 
         Log.d(getClass().toString(), "onCreate got called");
     }
@@ -63,12 +68,12 @@ public class RulesActivity extends AppCompatActivity {
         String result = rules.play();
         String wonName = rules.winnersName();
         if (player1name.getText().toString().equals(wonName)) {
-            player1name.setBackgroundColor(Color.GREEN);
+            player1name.setBackground(getResources().getDrawable(R.drawable.grbtn));
 //            player2name.setBackgroundColor(Color.BLACK);
 
         } else if (player2name.getText().toString().equals(wonName)) {
 //            player1name.setBackgroundColor(Color.BLACK);
-            player2name.setBackgroundColor(Color.GREEN);
+            player2name.setBackground(getResources().getDrawable(R.drawable.grbtn));
         } else {
             player1name.setBackgroundColor(Color.BLUE);
             player2name.setBackgroundColor(Color.BLUE);
@@ -79,10 +84,14 @@ public class RulesActivity extends AppCompatActivity {
 
     public void onLeaderboardClick(View view) {
 
-        
+        Log.d(getClass().toString(), "onLeaderboard clicked");
 
-
+        Intent wIntent;
+        wIntent = new Intent(RulesActivity.this, LeaderboardActivity.class);
+        startActivity(wIntent);
     }
+
+
 
 
 

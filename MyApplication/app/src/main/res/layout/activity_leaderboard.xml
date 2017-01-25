@@ -9,4 +9,21 @@
 
     tools:context="example.codeclan.com.cardproject.LeaderboardActivity">
 
+    <TextView
+        android:id="@+id/leaderboard_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/leaderboard_name"
+        android:textSize="50sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ListView
+        android:id="@+id/leaderboard"
+        android:layout_width="250sp"
+        android:layout_height="330sp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/leaderboard_title"
+        android:layout_alignLeft="@+id/leaderboard_title"
+        android:layout_alignStart="@+id/leaderboard_title" />
 </RelativeLayout>

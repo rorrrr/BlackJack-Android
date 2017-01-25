@@ -13,6 +13,8 @@
             android:name=".RulesActivity"
             android:label="@string/main_screen_name">
 
+
+
             <intent-filter>
 
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +22,16 @@
 
             </intent-filter>
         </activity>
+
+        <activity
+
+            android:name=".LeaderboardActivity"
+            android:label="Halloween Hall o' Fame"
+            android:parentActivityName=".RulesActivity">
+
+        </activity>
+
+
 
     </application>
 
